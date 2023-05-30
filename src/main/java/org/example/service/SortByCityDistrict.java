@@ -13,6 +13,10 @@ public class SortByCityDistrict implements Comparator<City> {
         return result.compareTo(result2);
     }
 
+    /**
+     * @param path принимает путь к файлу
+     *             сортирует по регионам и наименованию Города
+     */
     public static void sortDataByCityDistrict(String path) {
         List<City> cityList = DataService.loadingData(path);
         cityList.sort(new SortByCityDistrict());

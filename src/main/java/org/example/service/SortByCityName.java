@@ -11,9 +11,9 @@ public class SortByCityName implements Comparator<City> {
         return city1.getName().compareTo(city2.getName());
     }
 
-
     /**
-     * получает файл сортирует по наименованию Города
+     * @param path принимает путь к файлу
+     *             сортирует по наименованию Города [А-Я]
      */
     public static void sortDataByCityName(String path) {
         List<City> cityList = DataService.loadingData(path);
