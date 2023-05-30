@@ -1,12 +1,12 @@
-package org.example;
+package org.example.models;
 
-public class City {
+public class City  {
     private String name; // => наименование города
     private String region; // => регион
     private String district; // => федеральный округ
     private int population; // => количество жителей города
     private String foundation; // => дата основания или первое упоминание
-    //тут сначала я поставил int но потом были ошибки из за ввода "15 век..."
+
 
     //region Constructors
     public City(String name, String region, String district, int population, String foundation) {
@@ -16,6 +16,7 @@ public class City {
         this.population = population;
         this.foundation = foundation;
     }
+
     public City() {
     }
     //endregion
@@ -61,7 +62,7 @@ public class City {
         this.foundation = foundation;
     }
 
-     //endregion
+    //endregion
 
     //region toString
     @Override
