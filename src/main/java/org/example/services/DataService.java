@@ -1,12 +1,11 @@
-package org.example.service;
+package org.example.services;
 
-import org.example.object.City;
+import org.example.models.City;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+
 
 public class DataService {
 
@@ -69,4 +68,28 @@ public class DataService {
         } catch (FileNotFoundException ignored) {
         }
     }
+
+    /**
+     * @param path принимает путь к файлу
+     *             создаёт новый HashMap где String это Регион а Integer количество городов
+     *             проверяет есть ли в key регион, если нет то добовляет с value 1,
+     *             если есть то увеличивает value на 1
+     */
+    public static void sumOfCitiesByRegion(String path) {
+        List<City> cityList = DataService.loadingData(path);
+        Map<String, Integer> hashMap = new HashMap<>();
+            for (int i = 0; i < cityList.size(); i++) {
+                String regionName = cityList.get(i).getRegion();
+                if (!hashMap.containsKey(regionName)) {
+                    hashMap.put(regionName, 1);
+                } else {
+                    hashMap.put(regionName, hashMap.get(regionName) + 1);
+                }
+            }
+            for (Map.Entry<String, Integer> entry : hashMap.entrySet()) {
+                System.out.println( entry.getKey() + " - " + entry.getValue());
+            }
+
+    }
+
 }

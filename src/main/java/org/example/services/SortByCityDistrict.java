@@ -1,6 +1,6 @@
-package org.example.service;
+package org.example.services;
 
-import org.example.object.City;
+import org.example.models.City;
 
 import java.util.Comparator;
 import java.util.List;

@@ -1,4 +1,4 @@
-package org.example.object;
+package org.example.models;
 
 public class City  {
     private String name; // => наименование города
